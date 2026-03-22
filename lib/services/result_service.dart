@@ -42,8 +42,9 @@ class ResultService {
         body: jsonEncode(request.toJson()),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 201)
+      if (response.statusCode == 200 || response.statusCode == 201) {
         return response.body;
+      }
       throw Exception(
         'Failed to create result. Status code: ${response.statusCode}',
       );
@@ -61,8 +62,9 @@ class ResultService {
         body: jsonEncode(request.toJson()),
       );
 
-      if (response.statusCode == 200 || response.statusCode == 204)
+      if (response.statusCode == 200 || response.statusCode == 204) {
         return response.body;
+      }
       throw Exception(
         'Failed to update result. Status code: ${response.statusCode}',
       );

@@ -96,8 +96,8 @@ class _AddFundsState extends State<AddFunds>
                   fontSize: 14,
                 ),
                 tabs: const [
-                  Tab(text: 'Manual Pay'),
                   Tab(text: 'Auto Pay'),
+                  Tab(text: 'Manual Pay'),
                 ],
               ),
             ),
@@ -106,7 +106,7 @@ class _AddFundsState extends State<AddFunds>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [ManualPay(), AutoPay()],
+        children: const [AutoPay(), ManualPay()],
       ),
     );
   }

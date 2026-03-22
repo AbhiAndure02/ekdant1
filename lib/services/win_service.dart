@@ -14,8 +14,9 @@ class WinService {
       final headers = await TokenHelper.getAuthHeaders();
       final response = await _client.get(Uri.parse(_baseUrl), headers: headers);
 
-      if (response.statusCode == 200)
+      if (response.statusCode == 200) {
         return WinListResponse.fromJson(jsonDecode(response.body));
+      }
       throw Exception('Failed to load wins. Status: ${response.statusCode}');
     } catch (e) {
       throw Exception('Failed to fetch wins: $e');
@@ -30,8 +31,9 @@ class WinService {
         headers: headers,
       );
 
-      if (response.statusCode == 200)
+      if (response.statusCode == 200) {
         return UserWinListResponse.fromJson(jsonDecode(response.body));
+      }
       throw Exception(
         'Failed to load user wins. Status: ${response.statusCode}',
       );
@@ -48,8 +50,9 @@ class WinService {
         headers: headers,
       );
 
-      if (response.statusCode == 200)
+      if (response.statusCode == 200) {
         return Win.fromJson(jsonDecode(response.body));
+      }
       if (response.statusCode == 404) throw Exception('Win record not found');
       throw Exception('Failed to load win. Status: ${response.statusCode}');
     } catch (e) {

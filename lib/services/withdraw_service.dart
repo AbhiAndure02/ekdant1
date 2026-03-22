@@ -77,8 +77,9 @@ class WithdrawService {
         headers: headers,
       );
 
-      if (response.statusCode == 200)
+      if (response.statusCode == 200) {
         return WithdrawResponse.fromJson(json.decode(response.body));
+      }
       if (response.statusCode == 404) return null;
       throw Exception('Failed to load withdraw: ${response.statusCode}');
     } catch (e) {
@@ -98,8 +99,9 @@ class WithdrawService {
         body: json.encode(request.toJson()),
       );
 
-      if (response.statusCode == 200)
+      if (response.statusCode == 200) {
         return WithdrawResponse.fromJson(json.decode(response.body));
+      }
       if (response.statusCode == 404) return null;
       throw Exception('Failed to update withdraw: ${response.statusCode}');
     } catch (e) {

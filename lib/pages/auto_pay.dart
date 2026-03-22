@@ -33,7 +33,7 @@ class _AutoPayState extends State<AutoPay> {
   static const Color _textSecondary = Color(0xFF8A9BB5);
 
   // Quick amount chips
-  final List<int> _quickAmounts = [100, 200, 500, 1000, 2000, 5000];
+  final List<int> _quickAmounts = [100, 200, 500, 1000, 1500, 2000, 5000];
 
   @override
   void initState() {

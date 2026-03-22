@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:ekdant/models/check_min_amount.dart';
 import 'package:ekdant/services/token_helper.dart';
-import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 
 class CheckMinService {

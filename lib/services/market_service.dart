@@ -30,8 +30,9 @@ class MarketService {
       headers: headers,
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return MarketListResponse.fromJson(json.decode(response.body));
+    }
     throw Exception('Failed to load markets: ${response.statusCode}');
   }
 
@@ -42,8 +43,9 @@ class MarketService {
       headers: headers,
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return MarketResponse.fromJson(json.decode(response.body));
+    }
     if (response.statusCode == 404) throw Exception('Market not found');
     throw Exception('Failed to load market: ${response.statusCode}');
   }
@@ -56,8 +58,9 @@ class MarketService {
       body: json.encode(request.toJson()),
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return MarketResponse.fromJson(json.decode(response.body));
+    }
     if (response.statusCode == 404) throw Exception('Market not found');
     throw Exception('Failed to update market: ${response.statusCode}');
   }

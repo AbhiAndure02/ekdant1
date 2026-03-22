@@ -18,8 +18,9 @@ class GameRateService {
           .timeout(const Duration(seconds: 30));
 
       if (response.statusCode == 200 || response.statusCode == 201) {
-        if (response.body.isEmpty)
+        if (response.body.isEmpty) {
           throw Exception('Empty response from server');
+        }
         final responseData = jsonDecode(response.body);
         if (responseData['success'] == false) {
           throw Exception(responseData['message'] ?? 'Request failed');

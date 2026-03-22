@@ -31,8 +31,9 @@ class GameService {
       body: json.encode(request.toJson()),
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return GameResponse.fromJson(json.decode(response.body));
+    }
     if (response.statusCode == 404) throw Exception('Game not found');
     throw Exception('Failed to update game: ${response.statusCode}');
   }
@@ -44,8 +45,9 @@ class GameService {
       headers: headers,
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return GameListResponse.fromJson(json.decode(response.body));
+    }
     throw Exception('Failed to load games: ${response.statusCode}');
   }
 
@@ -68,8 +70,9 @@ class GameService {
       headers: headers,
     );
 
-    if (response.statusCode == 200)
+    if (response.statusCode == 200) {
       return GameResponse.fromJson(json.decode(response.body));
+    }
     if (response.statusCode == 404) throw Exception('Game not found');
     throw Exception('Failed to load game: ${response.statusCode}');
   }
